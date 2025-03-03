@@ -251,13 +251,12 @@ label:has(input.item-image-requirement:checked) ~ div.item-image-value-container
     max-width: 100%;
     display: flex;
     overflow-x: scroll;
-
 }
 .A4 {
     width: 210mm;
     height: 297mm;
     min-width: 210mm;
-    align-self: center;
+    /* align-self: center; */
     justify-self: center;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
