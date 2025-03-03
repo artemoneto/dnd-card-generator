@@ -190,7 +190,6 @@ function change_language(Element) {
         element.innerHTML = translation[language]["item_charges"]
     });
     document.querySelectorAll(".charges-editor > label > div > input").forEach(element => {
-        console.log(element)
         change_charges(element)
     });
 }
