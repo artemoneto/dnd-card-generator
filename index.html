@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DnD Card Generator</title>
+        <link rel="stylesheet" href="styles.css" type="text/css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+        <script src="https://cdn.rawgit.com/showdownjs/showdown/2.1.0/dist/showdown.min.js"></script>
+    </head>
+    <body>
+        <div class="editor not-printable">
+            <div id="top-menu">
+                <label>
+                    <span id="language-icon" class="material-symbols-outlined">
+                    language
+                    </span>
+                    <select id="language-select" onchange="change_language()"">
+                        <option value="english">English</option>
+                        <option value="russian" selected>Русский</option>
+                    </select>
+                </label>
+                <button id="print-button" onclick="window.print()">
+                    <span id="print-button-content">Print</span>
+                </button>
+            </div>
+            <div id="item-editors"></div>
+        </div>
+
+        <div class="A4-container">
+            <div class="A4" id="A4">
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
