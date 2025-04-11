@@ -245,6 +245,15 @@ function get_item_number(Element) {
 	return null;
 }
 
+function fit_text() {
+	textFit(document.getElementsByClassName('card-details'), 
+	{
+		minFontSize: 8, 
+		maxFontSize: 16, 
+		multiLine: true
+	})
+}
+
 function change_name(Element) {
 	item_number = get_item_number(Element);
 	card_name = document.getElementById(`card-name-${item_number}`);
@@ -271,6 +280,7 @@ function toggle_short_description(Element) {
 		card_short_description.style.display = "none";
 		// card_short_description.style.margin = "0";
 	}
+	fit_text()
 }
 
 function toggle_type(Element) {
@@ -283,6 +293,7 @@ function toggle_type(Element) {
 		card_type.style.visibility = "hidden";
 		card_short_description.classList.add("no-type");
 	}
+	fit_text()
 }
 
 function change_type(Element) {
@@ -309,6 +320,7 @@ function toggle_image(Element) {
 	} else {
 		card_short_description.classList.add("no-image");
 	}
+	fit_text()
 }
 
 function change_image(Element) {
@@ -348,6 +360,7 @@ function toggle_attunement(Element) {
 		card_attunement.style.display = "none";
 		card_short_description.classList.add("no-attunement");
 	}
+	fit_text()
 }
 
 function change_details(Element) {
@@ -357,6 +370,7 @@ function change_details(Element) {
 	details_editor_value = Element.value;
 	markdown_to_html = converter.makeHtml(details_editor_value);
 	card_details.innerHTML = markdown_to_html;
+	fit_text()
 }
 
 function change_charges(Element) {
@@ -384,4 +398,5 @@ function change_charges(Element) {
 		card_charges.innerHTML = battery_sections;
 		item_charges_display.innerHTML = Element.value;
 	}
+	fit_text()
 }
