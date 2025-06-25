@@ -41,12 +41,13 @@
         min-height: 100% !important;
 	}
     .A4-wrapper {
-        display: block !important;
+		display: grid !important;
+        justify-content: center;
+        align-content: center;
+        width: 210mm !important;
+        height: 297mm !important;
+        background-color: white;
         overflow: hidden !important;
-		/* width: 100vw !important;
-		height: 100vh !important; */
-        min-width: 100% !important;
-        min-height: 100% !important;
         padding: 0 !important;
         margin: 0 !important;
     }
@@ -408,17 +409,13 @@ main.no-preview > .A4-container {
 	margin: auto;
 }
 .A4 {
-	width: 210mm;
-	height: 297mm;
-	min-width: 210mm;
-	min-height: 297mm;
 	/* align-self: center; */
 	/* justify-self: center; */
 	display: grid;
 	/* grid-template-columns: 1fr 1fr 1fr; */
-	grid-template-columns: repeat(3, 70mm);
+	grid-template-columns: repeat(3, 63.5mm);
 	/* grid-template-rows: 1fr 1fr 1fr; */
-	grid-template-rows: repeat(3, 99mm);
+	grid-template-rows: repeat(3, 88.9mm);
 	gap: 1px;
 	background-color: rgba(255, 255, 255, 1);
 	box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
