@@ -15,15 +15,26 @@
                 <span id="language-icon" class="material-symbols-outlined">
                 language
                 </span>
-                <select id="language-select" onchange="change_language()"">
+                <select id="language-select">
                     <option value="english">English</option>
                     <option value="russian" selected>Русский</option>
                 </select>
             </label>
-            <button id="print-button" class="pretty-button" onclick="window.print()">
-                <span id="print-button-content" class="material-symbols-outlined">print</span>
+
+            <label for="load-input" id="load-button" class="pretty-button not-printable">
+                <span id="load-button-content" class="material-symbols-outlined">folder_open</span>
+            </label>
+            <input type="file" id="load-input" style="display: none;" accept=".json">
+
+            <button id="save-button" class="pretty-button not-printable">
+                <span id="save-button-content" class="material-symbols-outlined">save</span>
             </button>
-            <button id="toggle-preview-button" class="pretty-button material-symbols-outlined" onclick="toggle_preview()">
+
+            <button id="clear-button" class="pretty-button not-printable">
+                <span id="clear-button-content" class="material-symbols-outlined">delete_sweep</span>
+            </button>
+
+            <button id="toggle-preview-button" class="pretty-button material-symbols-outlined">
                 <!-- <span id="toggle-preview-button-content">Toggle Preview</span> -->
                 <span id="toggle-preview-button-content" class="material-symbols-outlined">
                     <!-- preview -->
@@ -32,6 +43,18 @@
                     <!-- visibility_off -->
                 </span>
             </button>
+
+            <button id="print-button" class="pretty-button not-printable">
+                <span id="print-button-content" class="material-symbols-outlined">print</span>
+            </button>
+
+            <div class="flip-option-container not-printable">
+                <label>
+                    <input type="checkbox" id="flip-on-short-edge">
+                    <span id="flip-on-short-edge-label">Flip for short-edge printing</span>
+                </label>
+            </div>
+
         </div>
 
         <main id="main-section">
