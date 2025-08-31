@@ -95,9 +95,10 @@
     function fit_text() {
         textFit(document.getElementsByClassName('card-details'),
         {
-            minFontSize: 8,
+            minFontSize: 1,
             maxFontSize: 16,
-            multiLine: true
+            multiLine: true,
+            precise: true
         });
     }
 
@@ -736,5 +737,7 @@
     updateAllText();
     fit_text();
     loadStateFromLocalStorage();
+
+    window.addEventListener('beforeprint', fit_text());
 
 })(); // End of IIFE
