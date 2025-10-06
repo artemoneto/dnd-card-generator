@@ -100,7 +100,7 @@ main {
 	overflow-y: scroll;
 
 	max-height: 100%;
-	flex-grow: 2;
+	flex-grow: 3;
 
 	-ms-overflow-style: none; /* Internet Explorer 10+ */
 	scrollbar-width: none;
@@ -490,11 +490,14 @@ main.no-preview > .A4-container {
 	gap: 1rem; /* Adds space between front and back pages in the screen view */
 }
 .card-container {
-	border: 2px solid black;
-	padding: 10px;
+	/* border: 2px solid black; */
+	border: 0.6mm solid black;
+	/* padding: 10px; */
+	padding: 2.8mm;
 	display: flex;
 	flex-direction: column;
-	gap: 3px;
+	/* gap: 3px; */
+	gap: 0.9mm;
 }
 .card-outline {
 	grid-row: auto;
@@ -503,34 +506,42 @@ main.no-preview > .A4-container {
 	height: 100%;
 	display: flex;
 	flex-direction: column;
-	border: 2px solid black;
-	border-radius: 10px;
+	/* border: 2px solid black; */
+	border: 0.6mm solid black;
+	/* border-radius: 10px; */
+	border-radius: 2.8mm;
 	background-color: white;
 
 	flex-grow: 1;
 }
 .card-outline > hr {
-	border-top: 2px solid black;
+	/* border-top: 2px solid black; */
+	border-top: 0.6mm solid black;
 }
 .card-name {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	background-color: gainsboro;
-	margin: 5px;
-	padding: 3px;
-	border-radius: 7px;
+	/* margin: 5px; */
+	margin: 1.4mm;
+	/* padding: 3px; */
+	padding: 0.9mm;
+	/* border-radius: 7px; */
+	border-radius: 1.8mm;
 	width: auto;
 	text-align: center;
 	font-size: 4.5mm;
 }
 .card-short-description {
-	margin: 5px;
+	/* margin: 5px; */
+	margin: 1.4mm;
 	margin-top: 0;
 	display: grid;
 	grid-template-columns: 1fr 2fr;
 	grid-template-rows: auto;
-	gap: 5px;
+	/* gap: 5px; */
+	gap: 1.4mm;
 	/* height: 30mm; */
 	/* display: none; */
 	/* overflow: hidden; */
@@ -568,7 +579,8 @@ main.no-preview > .A4-container {
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
-	border-radius: 5px;
+	/* border-radius: 5px; */
+	border-radius: 1.4mm;
 }
 .characteristics {
 	grid-column: 2;
@@ -607,15 +619,21 @@ main.no-preview > .A4-container {
 .card-details {
 	/* height: 100%; */
 	height: 0mm;
-	margin: 5px;
+	/* margin: 5px; */
 	background-color: gainsboro;
-	border-radius: 6px;
-	padding: 7px;
+	/* border-radius: 6px; */
+	/* padding: 7px; */
 	overflow-wrap: break-word;
 	/* word-break: break-all; */
 	flex-grow: 1;
 
 	text-align: justify;
+	text-wrap-style: pretty;
+
+    margin: 1.4mm;
+    border-radius: 1.6mm;
+    padding: 1.8mm;
+	/* padding-bottom: 5mm; */
 }
 /* .card-details > * {
 	font-size: 0.875rem !important;
@@ -630,23 +648,34 @@ main.no-preview > .A4-container {
 .battery {
 	flex-grow: 1;
 	display: flex;
-	padding: 3px;
-	border: 2px solid black;
-	border-radius: 6px;
-	gap: 3px;
+	/* padding: 3px; */
+	padding: 0.9mm;
+	/* border-radius: 6px; */
+	border-radius: 1.6mm;
+	/* border: 2px solid black; */
+	border: 0.6mm solid black;
+	/* gap: 3px; */
+	gap: 0.9mm;
 	background-color: rgb(240, 240, 240);
 }
 .battery-terminal {
 	background-color: black;
-	width: 4px;
-	height: 12px;
-	border-top-right-radius: 3px;
-	border-bottom-right-radius: 3px;
+	/* width: 4px; */
+	width: 1.2mm;
+	/* height: 12px; */
+	height: 3.6mm;
+	/* border-top-right-radius: 3px; */
+	border-top-right-radius: 0.9mm;
+	/* border-bottom-right-radius: 3px; */
+	border-bottom-right-radius: 0.9mm;
 }
 .battery-section {
-	border-radius: 4px;
-	border: 1px solid black;
-	height: 15px;
+	/* border-radius: 4px; */
+	border-radius: 1.2mm;
+	/* border: 1px solid black; */
+	border: 0.3mm solid black;
+	/* height: 15px; */
+	height: 4.5mm;
 	flex-grow: 1;
 	background-color: white;
 }
@@ -660,28 +689,31 @@ main.no-preview > .A4-container {
 }
 
 .card-back-outline {
-    border: 1px solid black;
+    /* border: 1px solid black; */
+	border: 0.3mm solid black;
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 10px;
+    /* padding: 10px; */
+	padding: 3mm;
 	position: relative;
 }
 
 .card-back-content {
     width: 80%;
-    max-width: 150px;
+    /* max-width: 150px; */
+	max-width: 45mm;
     position: relative;
     z-index: 1;
 }
 .dragon-primary{
-	fill: #000000;
+	fill: var(--dragon-primary-fill, #000000);
 }
 .dragon-secondary{
-	fill: #696969;
+	fill: var(--dragon-secondary-fill, #696969);
 }
 
 .card-back-logo {
@@ -696,8 +728,8 @@ main.no-preview > .A4-container {
     border-radius: 50%;
     width: 60%;
     height: 80%;
-    /* background-image: var(--vp-home-hero-image-background-image); */
-    filter: blur(40px);
+    background-image: radial-gradient(circle, var(--glow-color, hsla(355, 100%, 100%, 1)), transparent 100%);
+    filter: blur(var(--glow-blur, 25px));
     transform: translate(-50%, -50%);
     z-index: 0;
 }
@@ -725,94 +757,53 @@ main.no-preview > .A4-container {
 }
 
 /* --- Rarity Logo Glow --- */
-.card-back-logo-background {
-	background-image: radial-gradient(circle, hsla(355, 100%, 100%, 1), transparent 100%);
-	filter: blur(25px);
-}
 .card-backside .card-outline{
-	background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20xmlns%3Asvgjs%3D%22http%3A%2F%2Fsvgjs.dev%2Fsvgjs%22%20viewBox%3D%220%200%20640%20800%22%20width%3D%22640%22%20height%3D%22800%22%3E%3Cdefs%3E%3Cpattern%20id%3D%22mmmotif-pattern%22%20width%3D%2240%22%20height%3D%2240%22%20patternUnits%3D%22userSpaceOnUse%22%20patternTransform%3D%22translate(-9%20-13)%20scale(1)%20rotate(45)%20skewX(-2)%20skewY(0)%22%3E%0A%20%20%20%20%3Crect%20width%3D%2264.4123%22%20height%3D%22124.995%22%20transform%3D%22matrix(0.24201%200.970274%200%201%204.41162%20-64.7517)%22%20fill%3D%22hsl(0%2C%200%25%2C%2080%25)%22%3E%3C%2Frect%3E%0A%20%20%20%20%3Crect%20width%3D%2264.4123%22%20height%3D%22124.995%22%20transform%3D%22matrix(0.24201%20-0.970274%200%201%2019.9995%20-2.25317)%22%20fill%3D%22%239b9b9b%22%3E%3C%2Frect%3E%0A%3C%2Fpattern%3E%3C%2Fdefs%3E%3Crect%20width%3D%22640%22%20height%3D%22800%22%20fill%3D%22url(%23mmmotif-pattern)%22%3E%3C%2Frect%3E%3C%2Fsvg%3E');
-    background-repeat: no-repeat;
+	/* background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20xmlns%3Asvgjs%3D%22http%3A%2F%2Fsvgjs.dev%2Fsvgjs%22%20viewBox%3D%220%200%20640%20800%22%20width%3D%22640%22%20height%3D%22800%22%3E%3Cdefs%3E%3Cpattern%20id%3D%22mmmotif-pattern%22%20width%3D%2240%22%20height%3D%2240%22%20patternUnits%3D%22userSpaceOnUse%22%20patternTransform%3D%22translate(-9%20-13)%20scale(1)%20rotate(45)%20skewX(-2)%20skewY(0)%22%3E%0A%20%20%20%20%3Crect%20width%3D%2264.4123%22%20height%3D%22124.995%22%20transform%3D%22matrix(0.24201%200.970274%200%201%204.41162%20-64.7517)%22%20fill%3D%22hsl(0%2C%200%25%2C%2080%25)%22%3E%3C%2Frect%3E%0A%20%20%20%20%3Crect%20width%3D%2264.4123%22%20height%3D%22124.995%22%20transform%3D%22matrix(0.24201%20-0.970274%200%201%2019.9995%20-2.25317)%22%20fill%3D%22%239b9b9b%22%3E%3C%2Frect%3E%0A%3C%2Fpattern%3E%3C%2Fdefs%3E%3Crect%20width%3D%22640%22%20height%3D%22800%22%20fill%3D%22url(%23mmmotif-pattern)%22%3E%3C%2Frect%3E%3C%2Fsvg%3E'); */
+    background-image: var(--back-pattern, url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20xmlns%3Asvgjs%3D%22http%3A%2F%2Fsvgjs.dev%2Fsvgjs%22%20viewBox%3D%220%200%20640%20800%22%20width%3D%22640%22%20height%3D%22800%22%3E%3Cdefs%3E%3Cpattern%20id%3D%22mmmotif-pattern%22%20width%3D%2240%22%20height%3D%2240%22%20patternUnits%3D%22userSpaceOnUse%22%20patternTransform%3D%22translate(-9%20-13)%20scale(1)%20rotate(45)%20skewX(-2)%20skewY(0)%22%3E%0A%20%20%20%20%3Crect%20width%3D%2264.4123%22%20height%3D%22124.995%22%20transform%3D%22matrix(0.24201%200.970274%200%201%204.41162%20-64.7517)%22%20fill%3D%22hsl(0%2C%200%25%2C%2080%25)%22%3E%3C%2Frect%3E%0A%20%20%20%20%3Crect%20width%3D%2264.4123%22%20height%3D%22124.995%22%20transform%3D%22matrix(0.24201%20-0.970274%200%201%2019.9995%20-2.25317)%22%20fill%3D%22%239b9b9b%22%3E%3C%2Frect%3E%0A%3C%2Fpattern%3E%3C%2Fdefs%3E%3Crect%20width%3D%22640%22%20height%3D%22800%22%20fill%3D%22url(%23mmmotif-pattern)%22%3E%3C%2Frect%3E%3C%2Fsvg%3E'));
+	background-repeat: no-repeat;
 	/* background-size: cover;  */
 	opacity: 0.999; /* Fix to make svg background not pixelated on print */
 }
 
-.rarity-uncommon .card-back-logo-background {
-    /* background-image: radial-gradient(circle, hsla(141, 76%, 70%, 1), transparent 100%); */
-	background-image: radial-gradient(circle, hsla(355, 100%, 100%, 1), transparent 100%);
-	filter: blur(25px);
-}
-.rarity-uncommon .dragon-primary{
-	fill: hsl(141, 76%, 31%);
-}
-.rarity-uncommon .dragon-secondary{
-	fill: hsl(141, 76%, 61%);
+.rarity-uncommon {
+	--dragon-primary-fill: hsl(141, 76%, 31%);
+	--dragon-secondary-fill: hsl(141, 76%, 61%);
 }
 .card-backside.rarity-uncommon .card-outline{
-	background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20xmlns%3Asvgjs%3D%22http%3A%2F%2Fsvgjs.dev%2Fsvgjs%22%20viewBox%3D%220%200%20640%20800%22%20width%3D%22640%22%20height%3D%22800%22%3E%3Cdefs%3E%3Cpattern%20id%3D%22mmmotif-pattern%22%20width%3D%2240%22%20height%3D%2240%22%20patternUnits%3D%22userSpaceOnUse%22%20patternTransform%3D%22translate(-9%20-13)%20scale(1)%20rotate(45)%20skewX(-2)%20skewY(0)%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M9.39371%208.87681L34.4892%2012.7588L16.118%2023.3644L9.39371%208.87681Z%22%20fill%3D%22hsl(105%2C%2077%25%2C%2038%25)%22%3E%3C%2Fpath%3E%0A%20%20%20%20%3Cpath%20d%3D%22M9.39711%2018.8738L9.39697%208.87378L16.1171%2023.3638V33.3638L9.39711%2018.8738Z%22%20fill%3D%22%2374df4e%22%3E%3C%2Fpath%3E%0A%20%20%20%20%3Cpath%20d%3D%22M34.4871%2022.7538L34.4872%2012.7539L16.1173%2023.3439L16.1172%2033.3638L34.4871%2022.7538Z%22%20fill%3D%22%23007c00%22%3E%3C%2Fpath%3E%0A%3C%2Fpattern%3E%3C%2Fdefs%3E%3Crect%20width%3D%22640%22%20height%3D%22800%22%20fill%3D%22url(%23mmmotif-pattern)%22%3E%3C%2Frect%3E%3C%2Fsvg%3E');
-    background-repeat: no-repeat;
+	--back-pattern: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20xmlns%3Asvgjs%3D%22http%3A%2F%2Fsvgjs.dev%2Fsvgjs%22%20viewBox%3D%220%200%20640%20800%22%20width%3D%22640%22%20height%3D%22800%22%3E%3Cdefs%3E%3Cpattern%20id%3D%22mmmotif-pattern%22%20width%3D%2240%22%20height%3D%2240%22%20patternUnits%3D%22userSpaceOnUse%22%20patternTransform%3D%22translate(-9%20-13)%20scale(1)%20rotate(45)%20skewX(-2)%20skewY(0)%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M9.39371%208.87681L34.4892%2012.7588L16.118%2023.3644L9.39371%208.87681Z%22%20fill%3D%22hsl(105%2C%2077%25%2C%2038%25)%22%3E%3C%2Fpath%3E%0A%20%20%20%20%3Cpath%20d%3D%22M9.39711%2018.8738L9.39697%208.87378L16.1171%2023.3638V33.3638L9.39711%2018.8738Z%22%20fill%3D%22%2374df4e%22%3E%3C%2Fpath%3E%0A%20%20%20%20%3Cpath%20d%3D%22M34.4871%2022.7538L34.4872%2012.7539L16.1173%2023.3439L16.1172%2033.3638L34.4871%2022.7538Z%22%20fill%3D%22%23007c00%22%3E%3C%2Fpath%3E%0A%3C%2Fpattern%3E%3C%2Fdefs%3E%3Crect%20width%3D%22640%22%20height%3D%22800%22%20fill%3D%22url(%23mmmotif-pattern)%22%3E%3C%2Frect%3E%3C%2Fsvg%3E');
 }
 
-.rarity-rare .card-back-logo-background {
-    /* background-image: radial-gradient(circle, hsla(211, 100%, 80%, 1), transparent 100%); */
-	background-image: radial-gradient(circle, hsla(355, 100%, 100%, 1), transparent 100%);
-	filter: blur(25px);
-}
-.rarity-rare .dragon-primary{
-	fill: hsl(211, 100%, 40%);
-}
-.rarity-rare .dragon-secondary{
-	fill: hsl(211, 100%, 70%);
+.rarity-rare {
+	--dragon-primary-fill: hsl(211, 100%, 40%);
+	--dragon-secondary-fill: hsl(211, 100%, 70%);
 }
 .card-backside.rarity-rare .card-outline{
-	background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20xmlns%3Asvgjs%3D%22http%3A%2F%2Fsvgjs.dev%2Fsvgjs%22%20viewBox%3D%220%200%20640%20800%22%20width%3D%22640%22%20height%3D%22800%22%3E%3Cdefs%3E%3Cpattern%20id%3D%22mmmotif-pattern%22%20width%3D%2240%22%20height%3D%2240%22%20patternUnits%3D%22userSpaceOnUse%22%20patternTransform%3D%22translate(-9%20-13)%20scale(1.2)%20rotate(45)%20skewX(-2)%20skewY(0)%22%3E%0A%20%20%20%20%3Crect%20width%3D%2211.3638%22%20height%3D%2211.3638%22%20transform%3D%22matrix(0.872008%200.489492%20-0.872008%200.489492%2020%2011.4375)%22%20fill%3D%22hsl(212%2C%2081%25%2C%2046%25)%22%3E%3C%2Frect%3E%0A%20%20%20%20%3Crect%20width%3D%2211.3638%22%20height%3D%226%22%20transform%3D%22matrix(0.872008%200.489492%200%201%2010.0903%2017)%22%20fill%3D%22%23639dff%22%3E%3C%2Frect%3E%0A%20%20%20%20%3Crect%20width%3D%2211.3638%22%20height%3D%226%22%20transform%3D%22matrix(0.872008%20-0.489492%200%201%2019.9995%2022.5625)%22%20fill%3D%22%230045a2%22%3E%3C%2Frect%3E%0A%3C%2Fpattern%3E%3C%2Fdefs%3E%3Crect%20width%3D%22640%22%20height%3D%22800%22%20fill%3D%22url(%23mmmotif-pattern)%22%3E%3C%2Frect%3E%3C%2Fsvg%3E');
-    background-repeat: no-repeat;
+	--back-pattern: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20xmlns%3Asvgjs%3D%22http%3A%2F%2Fsvgjs.dev%2Fsvgjs%22%20viewBox%3D%220%200%20640%20800%22%20width%3D%22640%22%20height%3D%22800%22%3E%3Cdefs%3E%3Cpattern%20id%3D%22mmmotif-pattern%22%20width%3D%2240%22%20height%3D%2240%22%20patternUnits%3D%22userSpaceOnUse%22%20patternTransform%3D%22translate(-9%20-13)%20scale(1.2)%20rotate(45)%20skewX(-2)%20skewY(0)%22%3E%0A%20%20%20%20%3Crect%20width%3D%2211.3638%22%20height%3D%2211.3638%22%20transform%3D%22matrix(0.872008%200.489492%20-0.872008%200.489492%2020%2011.4375)%22%20fill%3D%22hsl(212%2C%2081%25%2C%2046%25)%22%3E%3C%2Frect%3E%0A%20%20%20%20%3Crect%20width%3D%2211.3638%22%20height%3D%226%22%20transform%3D%22matrix(0.872008%200.489492%200%201%2010.0903%2017)%22%20fill%3D%22%23639dff%22%3E%3C%2Frect%3E%0A%20%20%20%20%3Crect%20width%3D%2211.3638%22%20height%3D%226%22%20transform%3D%22matrix(0.872008%20-0.489492%200%201%2019.9995%2022.5625)%22%20fill%3D%22%230045a2%22%3E%3C%2Frect%3E%0A%3C%2Fpattern%3E%3C%2Fdefs%3E%3Crect%20width%3D%22640%22%20height%3D%22800%22%20fill%3D%22url(%23mmmotif-pattern)%22%3E%3C%2Frect%3E%3C%2Fsvg%3E');
 }
 
-.rarity-epic .card-back-logo-background {
-    /* background-image: radial-gradient(circle, hsla(271, 76%, 90%, 1), transparent 100%); */
-	background-image: radial-gradient(circle, hsla(355, 100%, 100%, 1), transparent 100%);
-	filter: blur(5px);
-}
-.rarity-epic .dragon-primary{
-	fill: hsl(271, 76%, 51%);
-}
-.rarity-epic .dragon-secondary{
-	fill: hsl(271, 76%, 81%);
+.rarity-epic {
+	--glow-blur: 5px;
+	--dragon-primary-fill: hsl(271, 76%, 51%);
+	--dragon-secondary-fill: hsl(271, 76%, 81%);
 }
 .card-backside.rarity-epic .card-outline{
-	background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20xmlns%3Asvgjs%3D%22http%3A%2F%2Fsvgjs.dev%2Fsvgjs%22%20viewBox%3D%220%200%20640%20800%22%20width%3D%22640%22%20height%3D%22800%22%3E%3Cdefs%3E%3Cpattern%20id%3D%22mmmotif-pattern%22%20width%3D%2240%22%20height%3D%2240%22%20patternUnits%3D%22userSpaceOnUse%22%20patternTransform%3D%22translate(-9%20-13)%20scale(1.3)%20rotate(45)%20skewX(-2)%20skewY(0)%22%3E%0A%20%20%20%20%3Ccircle%20r%3D%227.34831%22%20transform%3D%22matrix(0.866044%20-0.499967%200.866044%200.499967%2020.0004%2023.5002)%22%20fill%3D%22%23c956ff%22%3E%3C%2Fcircle%3E%0A%20%20%20%20%3Ccircle%20r%3D%227.34831%22%20transform%3D%22matrix(0.866044%20-0.499967%200.866044%200.499967%2020.0004%2020.5002)%22%20fill%3D%22%235700c9%22%3E%3C%2Fcircle%3E%0A%20%20%20%20%3Ccircle%20r%3D%227.34831%22%20transform%3D%22matrix(0.866044%20-0.499967%200.866044%200.499967%2019.9999%2016.4998)%22%20fill%3D%22hsl(272%2C%2099%25%2C%2054%25)%22%3E%3C%2Fcircle%3E%0A%3C%2Fpattern%3E%3C%2Fdefs%3E%3Crect%20width%3D%22640%22%20height%3D%22800%22%20fill%3D%22url(%23mmmotif-pattern)%22%3E%3C%2Frect%3E%3C%2Fsvg%3E');
-    background-repeat: no-repeat;
+	--back-pattern: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20xmlns%3Asvgjs%3D%22http%3A%2F%2Fsvgjs.dev%2Fsvgjs%22%20viewBox%3D%220%200%20640%20800%22%20width%3D%22640%22%20height%3D%22800%22%3E%3Cdefs%3E%3Cpattern%20id%3D%22mmmotif-pattern%22%20width%3D%2240%22%20height%3D%2240%22%20patternUnits%3D%22userSpaceOnUse%22%20patternTransform%3D%22translate(-9%20-13)%20scale(1.3)%20rotate(45)%20skewX(-2)%20skewY(0)%22%3E%0A%20%20%20%20%3Ccircle%20r%3D%227.34831%22%20transform%3D%22matrix(0.866044%20-0.499967%200.866044%200.499967%2020.0004%2023.5002)%22%20fill%3D%22%23c956ff%22%3E%3C%2Fcircle%3E%0A%20%20%20%20%3Ccircle%20r%3D%227.34831%22%20transform%3D%22matrix(0.866044%20-0.499967%200.866044%200.499967%2020.0004%2020.5002)%22%20fill%3D%22%235700c9%22%3E%3C%2Fcircle%3E%0A%20%20%20%20%3Ccircle%20r%3D%227.34831%22%20transform%3D%22matrix(0.866044%20-0.499967%200.866044%200.499967%2019.9999%2016.4998)%22%20fill%3D%22hsl(272%2C%2099%25%2C%2054%25)%22%3E%3C%2Fcircle%3E%0A%3C%2Fpattern%3E%3C%2Fdefs%3E%3Crect%20width%3D%22640%22%20height%3D%22800%22%20fill%3D%22url(%23mmmotif-pattern)%22%3E%3C%2Frect%3E%3C%2Fsvg%3E');
 }
 
-.rarity-legendary .card-back-logo-background {
-    /* background-image: radial-gradient(circle, hsla(36, 100%, 85%, 1), transparent 100%); */
-	background-image: radial-gradient(circle, hsla(355, 100%, 100%, 1), transparent 100%);
-	filter: blur(25px);
-}
-.rarity-legendary .dragon-primary{
-	fill: hsl(36, 100%, 45%);
-}
-.rarity-legendary .dragon-secondary{
-	fill: hsl(36, 100%, 75%);
+.rarity-legendary {
+	--dragon-primary-fill: hsl(36, 100%, 45%);
+	--dragon-secondary-fill: hsl(36, 100%, 75%);
 }
 .card-backside.rarity-legendary .card-outline{
-	background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20xmlns%3Asvgjs%3D%22http%3A%2F%2Fsvgjs.dev%2Fsvgjs%22%20viewBox%3D%220%200%20640%20800%22%20width%3D%22640%22%20height%3D%22800%22%3E%3Cdefs%3E%3Cpattern%20id%3D%22mmmotif-pattern%22%20width%3D%2240%22%20height%3D%2240%22%20patternUnits%3D%22userSpaceOnUse%22%20patternTransform%3D%22translate(-9%20-13)%20scale(1.2)%20rotate(45)%20skewX(-2)%20skewY(0)%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M9.38965%2021.1608L9.38979%2012.1609L15.7596%2015.8408L12.2967%2022.8196L9.38965%2021.1608Z%22%20fill%3D%22%23ffd659%22%3E%3C%2Fpath%3E%0A%20%20%20%20%3Cpath%20d%3D%22M9.38965%2028.5108L9.38979%2019.5107L13.6396%2021.9608L13.64%2030.9608L9.38965%2028.5108Z%22%20fill%3D%22%23ffd659%22%3E%3C%2Fpath%3E%0A%20%20%20%20%3Cpath%20d%3D%22M13.6401%2030.9608V21.9608L20.0001%2018.2808V27.2808L13.6401%2030.9608Z%22%20fill%3D%22%23bd7600%22%3E%3C%2Fpath%3E%0A%20%20%20%20%3Cpath%20d%3D%22M20%2027.2808V18.2808L26.36%2021.9608V30.9608L20%2027.2808Z%22%20fill%3D%22%23ffd659%22%3E%3C%2Fpath%3E%0A%20%20%20%20%3Cpath%20d%3D%22M26.3599%2030.9608V21.9607L30.6099%2019.5107L30.61%2028.507L26.3599%2030.9608Z%22%20fill%3D%22%23bd7600%22%3E%3C%2Fpath%3E%0A%20%20%20%20%3Cpath%20d%3D%22M30.6102%2021.1634V12.1609L24.2402%2015.8408L27.6992%2022.8391L30.6102%2021.1634Z%22%20fill%3D%22%23bd7600%22%3E%3C%2Fpath%3E%0A%20%20%20%20%3Cpath%20d%3D%22M13.6359%209.71299L9.39326%2012.1623L15.7572%2015.8362L9.39326%2019.5101L13.6359%2021.9594L19.9999%2018.2855L26.3638%2021.9594L30.6065%2019.5101L24.2425%2015.8362L30.6065%2012.1623L26.3638%209.71299L19.9999%2013.3869L13.6359%209.71299Z%22%20fill%3D%22hsl(37%2C%2091%25%2C%2055%25)%22%3E%3C%2Fpath%3E%0A%3C%2Fpattern%3E%3C%2Fdefs%3E%3Crect%20width%3D%22640%22%20height%3D%22800%22%20fill%3D%22url(%23mmmotif-pattern)%22%3E%3C%2Frect%3E%3C%2Fsvg%3E');
-    background-repeat: no-repeat;
+	--back-pattern: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20xmlns%3Asvgjs%3D%22http%3A%2F%2Fsvgjs.dev%2Fsvgjs%22%20viewBox%3D%220%200%20640%20800%22%20width%3D%22640%22%20height%3D%22800%22%3E%3Cdefs%3E%3Cpattern%20id%3D%22mmmotif-pattern%22%20width%3D%2240%22%20height%3D%2240%22%20patternUnits%3D%22userSpaceOnUse%22%20patternTransform%3D%22translate(-9%20-13)%20scale(1.2)%20rotate(45)%20skewX(-2)%20skewY(0)%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M9.38965%2021.1608L9.38979%2012.1609L15.7596%2015.8408L12.2967%2022.8196L9.38965%2021.1608Z%22%20fill%3D%22%23ffd659%22%3E%3C%2Fpath%3E%0A%20%20%20%20%3Cpath%20d%3D%22M9.38965%2028.5108L9.38979%2019.5107L13.6396%2021.9608L13.64%2030.9608L9.38965%2028.5108Z%22%20fill%3D%22%23ffd659%22%3E%3C%2Fpath%3E%0A%20%20%20%20%3Cpath%20d%3D%22M13.6401%2030.9608V21.9608L20.0001%2018.2808V27.2808L13.6401%2030.9608Z%22%20fill%3D%22%23bd7600%22%3E%3C%2Fpath%3E%0A%20%20%20%20%3Cpath%20d%3D%22M20%2027.2808V18.2808L26.36%2021.9608V30.9608L20%2027.2808Z%22%20fill%3D%22%23ffd659%22%3E%3C%2Fpath%3E%0A%20%20%20%20%3Cpath%20d%3D%22M26.3599%2030.9608V21.9607L30.6099%2019.5107L30.61%2028.507L26.3599%2030.9608Z%22%20fill%3D%22%23bd7600%22%3E%3C%2Fpath%3E%0A%20%20%20%20%3Cpath%20d%3D%22M30.6102%2021.1634V12.1609L24.2402%2015.8408L27.6992%2022.8391L30.6102%2021.1634Z%22%20fill%3D%22%23bd7600%22%3E%3C%2Fpath%3E%0A%20%20%20%20%3Cpath%20d%3D%22M13.6359%209.71299L9.39326%2012.1623L15.7572%2015.8362L9.39326%2019.5101L13.6359%2021.9594L19.9999%2018.2855L26.3638%2021.9594L30.6065%2019.5101L24.2425%2015.8362L30.6065%2012.1623L26.3638%209.71299L19.9999%2013.3869L13.6359%209.71299Z%22%20fill%3D%22hsl(37%2C%2091%25%2C%2055%25)%22%3E%3C%2Fpath%3E%0A%3C%2Fpattern%3E%3C%2Fdefs%3E%3Crect%20width%3D%22640%22%20height%3D%22800%22%20fill%3D%22url(%23mmmotif-pattern)%22%3E%3C%2Frect%3E%3C%2Fsvg%3E');
 }
 
-.rarity-artifact .card-back-logo-background {
-    /* background-image: radial-gradient(circle, hsla(355, 78%, 85%, 1), transparent 100%); */
-	/* background-image: radial-gradient(circle, hsla(355, 100%, 100%, 1), transparent 100%); */
-	background-image: radial-gradient(circle, hsla(355, 0%, 0%, 1), transparent 100%);
-	filter: blur(15px);
-}
-.rarity-artifact .dragon-primary{
-	fill: hsl(355, 78%, 46%);
-}
-.rarity-artifact .dragon-secondary{
-	fill: hsl(355, 78%, 76%);
+.rarity-artifact {
+	--glow-color: hsla(355, 0%, 0%, 1);
+	--glow-blur: 15px;
+	--dragon-primary-fill: hsl(355, 78%, 46%);
+	--dragon-secondary-fill: hsl(355, 78%, 76%);
 }
 .card-backside.rarity-artifact .card-outline{
-	background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20xmlns%3Asvgjs%3D%22http%3A%2F%2Fsvgjs.dev%2Fsvgjs%22%20viewBox%3D%220%200%20640%20800%22%20width%3D%22640%22%20height%3D%22800%22%3E%3Cdefs%3E%3Cpattern%20id%3D%22mmmotif-pattern%22%20width%3D%2240%22%20height%3D%2240%22%20patternUnits%3D%22userSpaceOnUse%22%20patternTransform%3D%22translate(-9%20-13)%20scale(0.8)%20rotate(32)%20skewX(-2)%20skewY(0)%22%3E%0A%20%20%20%20%3Crect%20width%3D%2218%22%20height%3D%2218%22%20transform%3D%22matrix(0.866025%200.5%20-0.866025%200.5%2020%202)%22%20fill%3D%22hsl(353%2C%2098%25%2C%2041%25)%22%3E%3C%2Frect%3E%0A%20%20%20%20%3Crect%20width%3D%2218%22%20height%3D%2218%22%20transform%3D%22matrix(0.866025%200.5%20-2.20305e-08%201%204.41162%2011)%22%20fill%3D%22%23ff5043%22%3E%3C%2Frect%3E%0A%20%20%20%20%3Crect%20width%3D%2218%22%20height%3D%2218%22%20transform%3D%22matrix(0.866025%20-0.5%202.20305e-08%201%2020%2020)%22%20fill%3D%22%23950000%22%3E%3C%2Frect%3E%0A%3C%2Fpattern%3E%3C%2Fdefs%3E%3Crect%20width%3D%22640%22%20height%3D%22800%22%20fill%3D%22url(%23mmmotif-pattern)%22%3E%3C%2Frect%3E%3C%2Fsvg%3E');
-    background-repeat: no-repeat;
+	--back-pattern: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20xmlns%3Asvgjs%3D%22http%3A%2F%2Fsvgjs.dev%2Fsvgjs%22%20viewBox%3D%220%200%20640%20800%22%20width%3D%22640%22%20height%3D%22800%22%3E%3Cdefs%3E%3Cpattern%20id%3D%22mmmotif-pattern%22%20width%3D%2240%22%20height%3D%2240%22%20patternUnits%3D%22userSpaceOnUse%22%20patternTransform%3D%22translate(-9%20-13)%20scale(0.8)%20rotate(32)%20skewX(-2)%20skewY(0)%22%3E%0A%20%20%20%20%3Crect%20width%3D%2218%22%20height%3D%2218%22%20transform%3D%22matrix(0.866025%200.5%20-0.866025%200.5%2020%202)%22%20fill%3D%22hsl(353%2C%2098%25%2C%2041%25)%22%3E%3C%2Frect%3E%0A%20%20%20%20%3Crect%20width%3D%2218%22%20height%3D%2218%22%20transform%3D%22matrix(0.866025%200.5%20-2.20305e-08%201%204.41162%2011)%22%20fill%3D%22%23ff5043%22%3E%3C%2Frect%3E%0A%20%20%20%20%3Crect%20width%3D%2218%22%20height%3D%2218%22%20transform%3D%22matrix(0.866025%20-0.5%202.20305e-08%201%2020%2020)%22%20fill%3D%22%23950000%22%3E%3C%2Frect%3E%0A%3C%2Fpattern%3E%3C%2Fdefs%3E%3Crect%20width%3D%22640%22%20height%3D%22800%22%20fill%3D%22url(%23mmmotif-pattern)%22%3E%3C%2Frect%3E%3C%2Fsvg%3E');
 }

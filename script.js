@@ -1,9 +1,21 @@
 // Wrap the entire script in an IIFE to encapsulate variables and functions
-(function() {
+(function() {    
     const item_editors = document.getElementById("item-editors");
     const A4 = document.getElementById("A4");
 
+    // const options = {
+    //     margin: 1,
+    //     filename: 'cards.pdf',
+    //     // image: { type: 'jpeg', quality: 1.00 },
+    //     image: { type: 'png' },
+    //     html2canvas: { scale: 5},
+    //     jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    // }
+
+    // let file = html2pdf().set(options);
+
     const converter = new showdown.Converter();
+    const FONT_SHRINK_FACTOR = 0.97; // Adjust this multiplier as needed
 
     const translation = {
 	english: {
@@ -93,14 +105,39 @@
 
     // Function to apply text fitting
     function fit_text() {
-        textFit(document.getElementsByClassName('card-details'),
+        const elements = document.getElementsByClassName('card-details');
+        textFit(elements,
         {
-            minFontSize: 1,
-            maxFontSize: 16,
+            // Font sizes are now in mm. 4mm is roughly 15-16px.
+            minFontSize: 1, // 1mm minimum font size
+            maxFontSize: 3, // 4mm maximum font size
             multiLine: true,
-            precise: true
+            precise: true,
+            applyToSelf: true,
+            unit: 'mm' // Specify the unit
         });
+
+        // let to_print = document.getElementById('A4').cloneNode(true)
+        // file = file.from(to_print)
     }
+
+    // Re-run textFit before printing to use the correct print layout metrics
+    window.addEventListener('beforeprint', () => {
+        fit_text();
+        elements = document.getElementsByClassName('card-details')
+        for (const element of elements) {
+            const currentSize = parseFloat(element.style.fontSize);
+            const unit = String(element.style.fontSize).replace(/[\d.-]/g, '');
+            if (!isNaN(currentSize) && unit) {
+                element.style.fontSize = (currentSize * FONT_SHRINK_FACTOR) + unit;
+            }
+        }
+    });
+
+    // Re-run textFit after printing to restore the screen layout if needed
+    window.addEventListener('afterprint', () => {
+        fit_text();
+    });
 
     // Function to update all language-dependent text
     function updateAllText() {
@@ -341,10 +378,10 @@
     item_editors.addEventListener('change', debouncedSaveState);
 
     A4.innerHTML = `
-        <div class="print-page front-page">
+        <div class="print-page front-page" id="front-page">
             ${A4Htmls.join('')}
         </div>
-        <div class="print-page back-page">
+        <div class="print-page back-page" id="back-page">
             ${backsideHtmls.join('')}
         </div>
     `;
@@ -390,7 +427,50 @@
 	const printButton = document.getElementById('print-button');
     if (printButton) {
         printButton.addEventListener('click', () => window.print());
+        // printButton.addEventListener('click', () => file.save());
+
+        // printButton.addEventListener('click', printHTML);
+
+        // printButton.addEventListener('click', () => {
+        //     console.log("Print")
+        //     const doc = new jspdf.jsPDF({
+        //         unit: 'mm',
+        //         format: 'a4',
+        //         orientation: 'portrait'
+        //     });
+
+        //     doc.html(A4, {
+        //         callback: function (doc) {
+        //             doc.save();
+        //         },
+        //         // x, y control the top-left corner of the image on the PDF
+        //         x: 0,
+        //         y: 0,
+        //         // width and windowWidth control the scaling.
+        //         // width is the width of the image on the PDF page (in jsPDF units, i.e., mm).
+        //         // windowWidth is the width of the virtual browser window html2canvas uses to render the element.
+        //         width: 210, // A4 width in mm
+        //         // windowWidth: A4.scrollWidth, // Use the element's full width in pixels
+        //         windowWidth: 210,
+        //         html2canvas: {
+        //             scale: 1/3, // Higher scale means better resolution
+        //             width: 210,
+        //             height: 297,
+        //             useCORS: true,
+        //         }
+        //     });
+        // })
     }
+
+    // async function printHTML() {
+
+    //     // let worker = await html2pdf().from(element).toPdf().output('blob').then((data) => {
+    //     let worker = await file.toPdf().output('blob').then((data) => {
+    //         console.log(data)
+    //         let fileURL = URL.createObjectURL(data);
+    //         window.open(fileURL);
+    //     })
+    // }
 
     // Attach event listeners to dynamically created elements
     for (let i = 1; i <= NUM_ITEMS; i++) {
@@ -647,6 +727,7 @@
         };
         reader.readAsText(file);
         event.target.value = ''; // Reset input to allow loading the same file again
+        fit_text();
     }
 
     function applyAllData(allCardsData) {
@@ -735,9 +816,11 @@
 
     // Initial calls to set up text and fit text after DOM is ready
     updateAllText();
-    fit_text();
     loadStateFromLocalStorage();
+    fit_text();
 
-    window.addEventListener('beforeprint', fit_text());
+    window.addEventListener("load", (event) => {
+        fit_text();
+    });
 
 })(); // End of IIFE
